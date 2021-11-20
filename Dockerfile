@@ -2,7 +2,7 @@ FROM jenkins/jenkins
 USER root
 
 # Install Pip
-RUN apt-get update && apt-get install python3-pip -y && \
+RUN apt-get update && apt-get install python3-pip git -y && \
     pip3 install ansible --upgrade
 
 # Install Docker
@@ -32,4 +32,3 @@ RUN wget --quiet https://releases.hashicorp.com/terraform/1.0.9/terraform_1.0.9_
   && rm terraform_1.0.9_linux_amd64.zip
 
 USER jenkins
-
