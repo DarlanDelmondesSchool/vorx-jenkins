@@ -7,7 +7,7 @@ pipeline {
                 sh './build.sh'
             }
         }
-        stage('Push to Registry') {
+        stage('Push Docker HUB') {
             steps {
                 sh './push.sh'
             }
