@@ -1,21 +1,16 @@
 pipeline {
+    agent any
 
-agent any
-
-  stages {
-    stage('Build') {
-      steps {
-        sh './build.sh'
-      }
+    stages {
+        stage('Build') {
+            steps {
+                sh './build.sh'
+            }
+        }
+        stage('Push to Registry') {
+            steps {
+                sh './push.sh'
+            }
+        }
     }
-  } 
-
-  stages {
-    stage('Push') {
-      steps {
-        sh './push.sh'
-      }
-    }
-  } 
-
 }
