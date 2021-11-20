@@ -9,4 +9,13 @@ agent any
       }
     }
   } 
+
+  stages {
+    stage('Push') {
+      steps {
+        sh './push.sh'
+      }
+    }
+  } 
+
 }
